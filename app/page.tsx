@@ -4,39 +4,18 @@ import { useMemo, useState } from "react";
 
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? "";
 
-type TimelineVisual =
-  | { kind: "image"; src: string; alt: string; credit: string; href: string }
-  | { kind: "instagram"; id: string; alt: string; credit: string; href: string }
-  | { kind: "youtube"; id: string; alt: string; credit: string; href: string };
+type TimelineVisual = {
+  src: string;
+  alt: string;
+  credit: string;
+  href: string;
+  position?: string;
+};
 
-function TimelineMedia({ visual, title }: { visual: TimelineVisual; title: string }) {
-  if (visual.kind === "instagram") {
-    return (
-      <div className="timeline-media instagram">
-        <iframe
-          src={`https://www.instagram.com/p/${visual.id}/embed/`}
-          title={`${title} - ${visual.alt}`}
-          loading="lazy"
-          scrolling="no"
-        />
-        <a className="timeline-media-credit" href={visual.href} target="_blank" rel="noreferrer">
-          {visual.credit} <span aria-hidden="true">{"\u2197"}</span>
-        </a>
-      </div>
-    );
-  }
-
-  const src = visual.kind === "youtube" ? `https://i.ytimg.com/vi/${visual.id}/hqdefault.jpg` : visual.src;
-
+function TimelineMedia({ visual }: { visual: TimelineVisual }) {
   return (
-    <div className={`timeline-media ${visual.kind}`}>
-      <a className="timeline-image-link" href={visual.href} target="_blank" rel="noreferrer">
-        <img src={src} alt={visual.alt} loading="lazy" />
-        {visual.kind === "youtube" && <span className="timeline-play" aria-hidden="true">{"\u25B6"}</span>}
-      </a>
-      <a className="timeline-media-credit" href={visual.href} target="_blank" rel="noreferrer">
-        {visual.credit} <span aria-hidden="true">{"\u2197"}</span>
-      </a>
+    <div className="timeline-media">
+      <img src={visual.src} alt={visual.alt} loading="lazy" style={{ objectPosition: visual.position ?? "center" }} />
     </div>
   );
 }
@@ -49,8 +28,7 @@ const timeline = [
     source: "ABC News",
     href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
     visual: {
-      kind: "image",
-      src: "https://s.abcnews.com/images/Lifestyle/ht_cat_selfie_split_hb_160115_16x9_992.jpg?w=1600",
+      src: "/timeline/01-origin.jpg",
       alt: "Manny the gray tabby in two early selfie photographs",
       credit: "@YOREMAHM VIA ABC NEWS",
       href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
@@ -63,8 +41,7 @@ const timeline = [
     source: "Refinery29",
     href: "https://www.refinery29.com/en-us/2016/01/101342/cat-selfies-better-than-us",
     visual: {
-      kind: "instagram",
-      id: "40N1FtJ5yR",
+      src: "/timeline/02-camera-roll.jpg",
       alt: "the original July 6, 2015 GoPro cat post",
       credit: "ORIGINAL POST \u00B7 JUL 6, 2015",
       href: "https://www.instagram.com/p/40N1FtJ5yR/",
@@ -77,8 +54,7 @@ const timeline = [
     source: "Original archive",
     href: "https://www.instagram.com/p/_Mad0ZJ53V/",
     visual: {
-      kind: "instagram",
-      id: "_Mad0ZJ53V",
+      src: "/timeline/03-squad.jpg",
       alt: "Manny posing in front of the family dog squad",
       credit: "ORIGINAL POST \u00B7 DEC 12, 2015",
       href: "https://www.instagram.com/p/_Mad0ZJ53V/",
@@ -91,8 +67,7 @@ const timeline = [
     source: "Press archive",
     href: "https://www.lovemeow.com/manny-the-cat-takes-selfies-for-him-and-his-dogs-with-a-gopro-camera-1608526665.html",
     visual: {
-      kind: "youtube",
-      id: "_qSPt5pF-u8",
+      src: "/timeline/04-worldwide.jpg",
       alt: "Video thumbnail showing Manny the Selfie Cat with his dog squad",
       credit: "EPIC VIRAL VIDS \u00B7 YOUTUBE",
       href: "https://www.youtube.com/watch?v=_qSPt5pF-u8",
@@ -105,8 +80,7 @@ const timeline = [
     source: "TN",
     href: "https://tn.com.ar/sociedad/manny-el-gato-que-se-saca-selfies-y-rompe-records-en-instagram_1014392/",
     visual: {
-      kind: "instagram",
-      id: "BqgbhgQn3cl",
+      src: "/timeline/05-half-million.jpg",
       alt: "Manny and his pack in a later post featured by TN",
       credit: "@YOREMAHM \u00B7 FEATURED BY TN",
       href: "https://www.instagram.com/p/BqgbhgQn3cl/",
@@ -119,7 +93,6 @@ const timeline = [
     source: "You are here",
     href: "#top",
     visual: {
-      kind: "image",
       src: "/selfie-cat-tribute.png",
       alt: "Original tribute artwork of Manny taking a wide-angle selfie with three dogs",
       credit: "ORIGINAL TRIBUTE ARTWORK",
@@ -273,12 +246,15 @@ export default function Home() {
         <div className="timeline-rail">
           {timeline.map((item, index) => (
             <article className="timeline-card" key={item.year}>
-              <div className="timeline-index">{String(index + 1).padStart(2, "0")}</div>
-              <time>{item.year}</time>
-              <TimelineMedia visual={item.visual} title={item.title} />
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
-              <a className="timeline-source" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{item.source} <span>↗</span></a>
+              <TimelineMedia visual={item.visual} />
+              <div className="timeline-card-content">
+                <div className="timeline-index">{String(index + 1).padStart(2, "0")}</div>
+                <time>{item.year}</time>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+                <a className="timeline-photo-credit" href={item.visual.href} target="_blank" rel="noreferrer">{item.visual.credit}</a>
+                <a className="timeline-source" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{item.source} <span>↗</span></a>
+              </div>
             </article>
           ))}
         </div>
