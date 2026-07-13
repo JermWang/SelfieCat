@@ -4,6 +4,43 @@ import { useMemo, useState } from "react";
 
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? "";
 
+type TimelineVisual =
+  | { kind: "image"; src: string; alt: string; credit: string; href: string }
+  | { kind: "instagram"; id: string; alt: string; credit: string; href: string }
+  | { kind: "youtube"; id: string; alt: string; credit: string; href: string };
+
+function TimelineMedia({ visual, title }: { visual: TimelineVisual; title: string }) {
+  if (visual.kind === "instagram") {
+    return (
+      <div className="timeline-media instagram">
+        <iframe
+          src={`https://www.instagram.com/p/${visual.id}/embed/`}
+          title={`${title} - ${visual.alt}`}
+          loading="lazy"
+          scrolling="no"
+        />
+        <a className="timeline-media-credit" href={visual.href} target="_blank" rel="noreferrer">
+          {visual.credit} <span aria-hidden="true">{"\u2197"}</span>
+        </a>
+      </div>
+    );
+  }
+
+  const src = visual.kind === "youtube" ? `https://i.ytimg.com/vi/${visual.id}/hqdefault.jpg` : visual.src;
+
+  return (
+    <div className={`timeline-media ${visual.kind}`}>
+      <a className="timeline-image-link" href={visual.href} target="_blank" rel="noreferrer">
+        <img src={src} alt={visual.alt} loading="lazy" />
+        {visual.kind === "youtube" && <span className="timeline-play" aria-hidden="true">{"\u25B6"}</span>}
+      </a>
+      <a className="timeline-media-credit" href={visual.href} target="_blank" rel="noreferrer">
+        {visual.credit} <span aria-hidden="true">{"\u2197"}</span>
+      </a>
+    </div>
+  );
+}
+
 const timeline = [
   {
     year: "c. 2014",
@@ -11,6 +48,13 @@ const timeline = [
     copy: "A gray tabby appears at a northern Arizona home and simply never leaves. His name is Manny.",
     source: "ABC News",
     href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
+    visual: {
+      kind: "image",
+      src: "https://s.abcnews.com/images/Lifestyle/ht_cat_selfie_split_hb_160115_16x9_992.jpg?w=1600",
+      alt: "Manny the gray tabby in two early selfie photographs",
+      credit: "@YOREMAHM VIA ABC NEWS",
+      href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
+    } satisfies TimelineVisual,
   },
   {
     year: "JUL 2015",
@@ -18,13 +62,27 @@ const timeline = [
     copy: "Early GoPro experiments land on @yoremahm. The close lens, the outstretched paw, the attitude: the format is born.",
     source: "Refinery29",
     href: "https://www.refinery29.com/en-us/2016/01/101342/cat-selfies-better-than-us",
+    visual: {
+      kind: "instagram",
+      id: "40N1FtJ5yR",
+      alt: "the original July 6, 2015 GoPro cat post",
+      credit: "ORIGINAL POST \u00B7 JUL 6, 2015",
+      href: "https://www.instagram.com/p/40N1FtJ5yR/",
+    } satisfies TimelineVisual,
   },
   {
     year: "DEC 2015",
     title: "The squad enters frame",
     copy: "Manny starts rallying the family dogs for wide-angle group shots. Internet portraiture is never quite the same.",
     source: "Original archive",
-    href: "https://www.instagram.com/yoremahm/",
+    href: "https://www.instagram.com/p/_Mad0ZJ53V/",
+    visual: {
+      kind: "instagram",
+      id: "_Mad0ZJ53V",
+      alt: "Manny posing in front of the family dog squad",
+      credit: "ORIGINAL POST \u00B7 DEC 12, 2015",
+      href: "https://www.instagram.com/p/_Mad0ZJ53V/",
+    } satisfies TimelineVisual,
   },
   {
     year: "JAN 2016",
@@ -32,6 +90,13 @@ const timeline = [
     copy: "Love Meow, ABC News, Refinery29 and others introduce Selfie Cat to a global audience in one wild press cycle.",
     source: "Press archive",
     href: "https://www.lovemeow.com/manny-the-cat-takes-selfies-for-him-and-his-dogs-with-a-gopro-camera-1608526665.html",
+    visual: {
+      kind: "youtube",
+      id: "_qSPt5pF-u8",
+      alt: "Video thumbnail showing Manny the Selfie Cat with his dog squad",
+      credit: "EPIC VIRAL VIDS \u00B7 YOUTUBE",
+      href: "https://www.youtube.com/watch?v=_qSPt5pF-u8",
+    } satisfies TimelineVisual,
   },
   {
     year: "2019",
@@ -39,6 +104,13 @@ const timeline = [
     copy: "Press reports the account passing 500,000 followers, with hundreds of posts documenting Manny and his pack.",
     source: "TN",
     href: "https://tn.com.ar/sociedad/manny-el-gato-que-se-saca-selfies-y-rompe-records-en-instagram_1014392/",
+    visual: {
+      kind: "instagram",
+      id: "BqgbhgQn3cl",
+      alt: "Manny and his pack in a later post featured by TN",
+      credit: "@YOREMAHM \u00B7 FEATURED BY TN",
+      href: "https://www.instagram.com/p/BqgbhgQn3cl/",
+    } satisfies TimelineVisual,
   },
   {
     year: "NOW",
@@ -46,6 +118,13 @@ const timeline = [
     copy: "A community tribute keeps the flash on—one paw, one frame, one very internet piece of history.",
     source: "You are here",
     href: "#top",
+    visual: {
+      kind: "image",
+      src: "/selfie-cat-tribute.png",
+      alt: "Original tribute artwork of Manny taking a wide-angle selfie with three dogs",
+      credit: "ORIGINAL TRIBUTE ARTWORK",
+      href: "#top",
+    } satisfies TimelineVisual,
   },
 ];
 
@@ -196,9 +275,10 @@ export default function Home() {
             <article className="timeline-card" key={item.year}>
               <div className="timeline-index">{String(index + 1).padStart(2, "0")}</div>
               <time>{item.year}</time>
+              <TimelineMedia visual={item.visual} title={item.title} />
               <h3>{item.title}</h3>
               <p>{item.copy}</p>
-              <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{item.source} <span>↗</span></a>
+              <a className="timeline-source" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{item.source} <span>↗</span></a>
             </article>
           ))}
         </div>
