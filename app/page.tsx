@@ -96,6 +96,17 @@ const press = [
   ["Bustle", "JAN 2016", "https://www.bustle.com/articles/135903-manny-the-cat-takes-better-selfies-than-you-do-and-hes-definitely-winning-the-internet"],
 ];
 
+const videos = [
+  { id: "c2kxS6amOLE", title: "Manny The Selfie Cat — The Go Pro", author: "Manny The Selfie Cat" },
+  { id: "_qSPt5pF-u8", title: "This Cat Takes Better Selfies Than You", author: "Epic Viral Vids" },
+];
+
+const instagramPosts = [
+  { id: "_Mad0ZJ53V", label: "THE SQUAD ARRIVES", date: "DEC 12, 2015" },
+  { id: "_J7iyip5yp", label: "DUCKFACE ERA", date: "DEC 11, 2015" },
+  { id: "BAK9WuEJ56G", label: "TONGUE-OUT TUESDAY", date: "JAN 5, 2016" },
+];
+
 export default function Home() {
   const [copied, setCopied] = useState(false);
   const [flashCount, setFlashCount] = useState(0);
@@ -127,6 +138,7 @@ export default function Home() {
         <nav aria-label="Primary navigation">
           <a href="#story">The story</a>
           <a href="#moments">Best moments</a>
+          <a href="#proof">Viral proof</a>
           <a href="#press">Press roll</a>
         </nav>
         <button className="mini-ca" type="button" onClick={copyContract} disabled={!hasContract}>
@@ -217,9 +229,74 @@ export default function Home() {
         <p className="archive-note">Archive cards link to the creator and reporting that preserved these moments. Photo rights remain with their respective owners.</p>
       </section>
 
+      <section className="proof section-pad" id="proof" aria-labelledby="proof-title">
+        <div className="section-head proof-head">
+          <div>
+            <div className="section-kicker"><span>004</span> THE UPLOAD TRAIL</div>
+            <h2 id="proof-title">YOU DIDN'T JUST<br />SEE IT. <em>EVERYONE DID.</em></h2>
+          </div>
+          <p>Original posts, video uploads, press pickups and years of rediscovery - the receipts are still online.</p>
+        </div>
+
+        <div className="proof-metrics" aria-label="Selfie Cat virality highlights">
+          <article><strong>500K+</strong><span>followers reported by 2019</span></article>
+          <article><strong>2015 - 2025</strong><span>a decade of reposts and rediscovery</span></article>
+          <article><strong>WORLDWIDE</strong><span>news, culture, pet and photography coverage</span></article>
+        </div>
+
+        <div className="proof-label"><span>01</span><b>WATCH THE UPLOADS</b><i>YOUTUBE ARCHIVE</i></div>
+        <div className="video-grid">
+          {videos.map((video) => (
+            <article className="video-card" key={video.id}>
+              <div className="video-frame">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                  title={video.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              <div className="video-meta"><span>PLAY</span><div><h3>{video.title}</h3><p>Uploaded by {video.author}</p></div></div>
+            </article>
+          ))}
+        </div>
+
+        <div className="proof-label social-proof-label"><span>02</span><b>THE ORIGINAL CAMERA ROLL</b><i>INSTAGRAM / @YOREMAHM</i></div>
+        <div className="instagram-grid">
+          {instagramPosts.map((post) => (
+            <article className="instagram-card" key={post.id}>
+              <div className="post-meta"><b>{post.label}</b><time>{post.date}</time></div>
+              <iframe
+                src={`https://www.instagram.com/p/${post.id}/embed/captioned/`}
+                title={`Manny the Selfie Cat - ${post.label}`}
+                loading="lazy"
+                scrolling="no"
+              />
+              <a href={`https://www.instagram.com/p/${post.id}/`} target="_blank" rel="noreferrer">OPEN ORIGINAL POST</a>
+            </article>
+          ))}
+        </div>
+
+        <div className="proof-label social-proof-label"><span>03</span><b>THE REPOST NEVER ENDED</b><i>REDDIT / X / THE OPEN WEB</i></div>
+        <div className="repost-grid">
+          <a className="repost-card reddit" href="https://www.reddit.com/r/Catmemes/comments/nfxta1/going_to_have_to_take_away_his_phone/" target="_blank" rel="noreferrer">
+            <span className="platform-mark">r/</span><small>r/CATMEMES / MAY 2021</small><h3>"Going to have to take away his phone"</h3><p>527+ votes - and commenters trace the photo back to Manny and @yoremahm.</p><b>OPEN THREAD</b>
+          </a>
+          <a className="repost-card reddit-dark" href="https://www.reddit.com/r/pics/comments/12ifr23/no_comment/" target="_blank" rel="noreferrer">
+            <span className="platform-mark">r/</span><small>r/PICS / APR 2023</small><h3>"No comment." The legend resurfaces.</h3><p>Years after the first viral wave, the replies still know exactly who is in frame.</p><b>OPEN THREAD</b>
+          </a>
+          <a className="repost-card x-card" href="https://x.com/search?q=%22Manny%20the%20Selfie%20Cat%22&src=typed_query" target="_blank" rel="noreferrer">
+            <span className="platform-mark">X</span><small>THE REPOST TRAIL / LIVE SEARCH</small><h3>One image. Endless new captions.</h3><p>Follow the references, reposts and reactions that kept Selfie Cat in circulation.</p><b>SEARCH X</b>
+          </a>
+        </div>
+
+        <p className="embed-note">Social embeds are served by their original platforms and may use cookies or require sign-in. All posts and media remain the property of their respective creators.</p>
+      </section>
       <section className="contract-section" id="token" aria-labelledby="contract-title">
         <div className="contract-sun" aria-hidden="true">$</div>
-        <div className="section-kicker light"><span>004</span> THE COMMUNITY ROLL</div>
+        <div className="section-kicker light"><span>005</span> THE COMMUNITY ROLL</div>
         <h2 id="contract-title">THE MEME<br />HAS <em>NINE LIVES.</em></h2>
         <p className="contract-deck">A community-made Solana tribute to an all-time internet original. No fake promises. Just one immortal camera roll.</p>
         <div className={`contract-box ${!hasContract ? "pending" : ""}`}>
@@ -245,7 +322,7 @@ export default function Home() {
       <section className="press section-pad" id="press" aria-labelledby="press-title">
         <div className="section-head press-head">
           <div>
-            <div className="section-kicker"><span>005</span> PRESS CONTACT SHEET</div>
+            <div className="section-kicker"><span>006</span> PRESS CONTACT SHEET</div>
             <h2 id="press-title">THE DAY THE<br /><em>FLASH WENT GLOBAL.</em></h2>
           </div>
           <p>Selected reporting that documented the phenomenon as it happened.</p>
