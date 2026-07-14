@@ -22,16 +22,16 @@ function TimelineMedia({ visual }: { visual: TimelineVisual }) {
 
 const timeline = [
   {
-    year: "c. 2014",
-    title: "A stray chooses his people",
-    copy: "A gray tabby appears at a northern Arizona home and simply never leaves. His name is Manny.",
-    source: "ABC News",
-    href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
+    year: "c. 2015",
+    title: "The visual gag appears",
+    copy: "A gray tabby leans into an ultra-wide action camera. One outstretched paw makes the frame look exactly like a selfie.",
+    source: "Original archive",
+    href: "https://www.instagram.com/yoremahm/",
     visual: {
       src: "/timeline/01-origin.jpg",
-      alt: "Manny the gray tabby in two early selfie photographs",
-      credit: "@YOREMAHM VIA ABC NEWS",
-      href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
+      alt: "The gray tabby in two early Selfie Cat photographs",
+      credit: "EARLY CAMERA ROLL · @YOREMAHM",
+      href: "https://www.instagram.com/yoremahm/",
     } satisfies TimelineVisual,
   },
   {
@@ -49,13 +49,13 @@ const timeline = [
   },
   {
     year: "DEC 2015",
-    title: "The squad enters frame",
-    copy: "Manny starts rallying the family dogs for wide-angle group shots. Internet portraiture is never quite the same.",
+    title: "The template locks in",
+    copy: "The outstretched paw, fisheye lens and crowded background become an instantly recognizable internet image format.",
     source: "Original archive",
     href: "https://www.instagram.com/p/_Mad0ZJ53V/",
     visual: {
       src: "/timeline/03-squad.jpg",
-      alt: "Manny posing in front of the family dog squad",
+      alt: "A wide-angle group selfie that helped define the Selfie Cat meme",
       credit: "ORIGINAL POST \u00B7 DEC 12, 2015",
       href: "https://www.instagram.com/p/_Mad0ZJ53V/",
     } satisfies TimelineVisual,
@@ -65,10 +65,10 @@ const timeline = [
     title: "Worldwide upload complete",
     copy: "Love Meow, ABC News, Refinery29 and others introduce Selfie Cat to a global audience in one wild press cycle.",
     source: "Press archive",
-    href: "https://www.lovemeow.com/manny-the-cat-takes-selfies-for-him-and-his-dogs-with-a-gopro-camera-1608526665.html",
+    href: "https://www.refinery29.com/en-us/2016/01/101342/cat-selfies-better-than-us",
     visual: {
       src: "/timeline/04-worldwide.jpg",
-      alt: "Video thumbnail showing Manny the Selfie Cat with his dog squad",
+      alt: "A viral video thumbnail documenting the Selfie Cat meme",
       credit: "EPIC VIRAL VIDS \u00B7 YOUTUBE",
       href: "https://www.youtube.com/watch?v=_qSPt5pF-u8",
     } satisfies TimelineVisual,
@@ -76,13 +76,13 @@ const timeline = [
   {
     year: "2019",
     title: "Half a million in the frame",
-    copy: "Press reports the account passing 500,000 followers, with hundreds of posts documenting Manny and his pack.",
-    source: "TN",
-    href: "https://tn.com.ar/sociedad/manny-el-gato-que-se-saca-selfies-y-rompe-records-en-instagram_1014392/",
+    copy: "Coverage reports the camera roll passing 500,000 followers as the selfie format keeps reaching new feeds.",
+    source: "Camera roll",
+    href: "https://www.instagram.com/yoremahm/",
     visual: {
       src: "/timeline/05-half-million.jpg",
-      alt: "Manny and his pack in a later post featured by TN",
-      credit: "@YOREMAHM \u00B7 FEATURED BY TN",
+      alt: "A later Selfie Cat post from the viral camera roll",
+      credit: "LATER CAMERA ROLL \u00B7 @YOREMAHM",
       href: "https://www.instagram.com/p/BqgbhgQn3cl/",
     } satisfies TimelineVisual,
   },
@@ -94,7 +94,7 @@ const timeline = [
     href: "#top",
     visual: {
       src: "/selfie-cat-tribute.png",
-      alt: "Original tribute artwork of Manny taking a wide-angle selfie with three dogs",
+      alt: "Original tribute artwork celebrating the wide-angle Selfie Cat meme",
       credit: "ORIGINAL TRIBUTE ARTWORK",
       href: "#top",
     } satisfies TimelineVisual,
@@ -106,17 +106,17 @@ const moments = [
     number: "01",
     tag: "THE ORIGIN SHOT",
     title: "Paw on the shutter",
-    copy: "Manny’s curiosity around the action camera created the illusion every selfie-taker wished they could master.",
+    copy: "A curious paw near the action camera created the impossible illusion: a cat with perfect selfie technique.",
     href: "https://www.instagram.com/yoremahm/",
     tone: "sun",
     glyph: "↗",
   },
   {
     number: "02",
-    tag: "THE GROUP CHAT",
-    title: "Cat in front. Dogs on security.",
-    copy: "The pack portraits became the signature: Manny at maximum confidence, the dog squad patiently behind him.",
-    href: "https://www.lovemeow.com/manny-the-cat-takes-selfies-for-him-and-his-dogs-with-a-gopro-camera-1608526665.html",
+    tag: "THE WIDE-ANGLE ERA",
+    title: "One paw. A whole frame.",
+    copy: "Crowded backgrounds and extreme perspective turned a lucky camera angle into a repeatable meme template.",
+    href: "https://www.instagram.com/p/_Mad0ZJ53V/",
     tone: "blue",
     glyph: "✦",
   },
@@ -125,31 +125,31 @@ const moments = [
     tag: "THE WINTER ROLL",
     title: "Snow, flash, tongue out",
     copy: "The snowy selfies pushed the fisheye drama even further—and became some of the most shared images in the set.",
-    href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
+    href: "https://www.instagram.com/p/BAK9WuEJ56G/",
     tone: "paper",
     glyph: "❋",
   },
   {
     number: "04",
     tag: "THE PHOTOBOMB",
-    title: "Every lens belongs to Manny",
-    copy: "His owner described a cat who would interrupt dog photos and try to take the camera. Main-character behavior, documented.",
-    href: "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475",
+    title: "Every lens becomes a selfie",
+    copy: "The joke lands before any caption does: paw forward, face centered, total confidence. Main-character behavior, documented.",
+    href: "https://www.instagram.com/yoremahm/",
     tone: "ink",
     glyph: "●",
   },
 ];
 
 const press = [
-  ["ABC News", "JAN 15, 2016", "https://abcnews.com/Lifestyle/manny-selfie-cat-takes-impressive-photos-gopro/story?id=36313475"],
-  ["Love Meow", "JAN 10, 2016", "https://www.lovemeow.com/manny-the-cat-takes-selfies-for-him-and-his-dogs-with-a-gopro-camera-1608526665.html"],
+  ["Original camera roll", "JUL 2015", "https://www.instagram.com/p/40N1FtJ5yR/"],
   ["Refinery29", "JAN 15, 2016", "https://www.refinery29.com/en-us/2016/01/101342/cat-selfies-better-than-us"],
-  ["Neatorama", "JAN 15, 2016", "https://www.neatorama.com/pet/2016/01/15/Manny-the-Selfie-Cat/"],
-  ["Bustle", "JAN 2016", "https://www.bustle.com/articles/135903-manny-the-cat-takes-better-selfies-than-you-do-and-hes-definitely-winning-the-internet"],
+  ["Viral video archive", "JAN 2016", "https://www.youtube.com/watch?v=_qSPt5pF-u8"],
+  ["Reddit rediscovery", "MAY 2021", "https://www.reddit.com/r/Catmemes/comments/nfxta1/going_to_have_to_take_away_his_phone/"],
+  ["Reddit repost trail", "APR 2023", "https://www.reddit.com/r/pics/comments/12ifr23/no_comment/"],
 ];
 
 const videos = [
-  { id: "c2kxS6amOLE", title: "Manny The Selfie Cat — The Go Pro", author: "Manny The Selfie Cat" },
+  { id: "c2kxS6amOLE", title: "Selfie Cat — The GoPro Era", author: "Archive upload" },
   { id: "_qSPt5pF-u8", title: "This Cat Takes Better Selfies Than You", author: "Epic Viral Vids" },
 ];
 
@@ -200,26 +200,26 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-photo" role="img" aria-label="Original tribute artwork of a gray tabby taking a wide-angle group selfie with three dogs" />
+        <div className="hero-photo" role="img" aria-label="Original tribute artwork celebrating the wide-angle Selfie Cat meme" />
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow"><span>EST. 2015</span> THE INTERNET’S MOST CONFIDENT CAMERA ROLL</p>
           <h1 id="hero-title">HE TOOK<br />THE <i>SELFIE.</i><br />WE KEPT<br />THE RECEIPTS.</h1>
           <div className="hero-bottom">
-            <p>A living tribute to Manny—the stray tabby who found a home, found a GoPro, and put the whole pack in frame.</p>
+            <p>A living archive of Selfie Cat—the wide-angle paw, impossible confidence, and camera roll that became a meme.</p>
             <button className="flash-button" onClick={fireFlash} type="button">
               <span>●</span> TAKE A SELFIE <small>{String(flashCount).padStart(2, "0")}</small>
             </button>
           </div>
         </div>
-        <p className="art-credit">ORIGINAL TRIBUTE ARTWORK · NOT AN ORIGINAL MANNY PHOTO</p>
+        <p className="art-credit">ORIGINAL TRIBUTE ARTWORK · INSPIRED BY THE VIRAL CAMERA ROLL</p>
         <div className="hero-stamp" aria-hidden="true"><b>VIRAL</b><span>JAN ’16</span></div>
       </section>
 
       <div className="ticker" aria-label="Selfie Cat highlights">
         <div>
-          <span>ONE CURIOUS PAW</span><i>✦</i><span>ONE VERY WIDE LENS</span><i>✦</i><span>AN ENTIRE DOG SQUAD</span><i>✦</i><span>500K+ FOLLOWERS REPORTED</span><i>✦</i>
-          <span aria-hidden="true">ONE CURIOUS PAW</span><i aria-hidden="true">✦</i><span aria-hidden="true">ONE VERY WIDE LENS</span><i aria-hidden="true">✦</i><span aria-hidden="true">AN ENTIRE DOG SQUAD</span><i aria-hidden="true">✦</i><span aria-hidden="true">500K+ FOLLOWERS REPORTED</span><i aria-hidden="true">✦</i>
+          <span>ONE CURIOUS PAW</span><i>✦</i><span>ONE VERY WIDE LENS</span><i>✦</i><span>AN ENDLESS REPOST TRAIL</span><i>✦</i><span>500K+ FOLLOWERS REPORTED</span><i>✦</i>
+          <span aria-hidden="true">ONE CURIOUS PAW</span><i aria-hidden="true">✦</i><span aria-hidden="true">ONE VERY WIDE LENS</span><i aria-hidden="true">✦</i><span aria-hidden="true">AN ENDLESS REPOST TRAIL</span><i aria-hidden="true">✦</i><span aria-hidden="true">500K+ FOLLOWERS REPORTED</span><i aria-hidden="true">✦</i>
         </div>
       </div>
 
@@ -228,9 +228,9 @@ export default function Home() {
         <div className="intro-grid">
           <h2>BEFORE THE FEED GOT POLISHED, A CAT <em>GRABBED THE CAMERA.</em></h2>
           <div className="intro-copy">
-            <p className="lead">Manny didn’t arrive with a content strategy. He arrived as a stray.</p>
-            <p>According to his owner, Yorem Ahm, the inquisitive gray tabby would photobomb shoots with the family dogs and reach for the GoPro. The ultra-wide frames made it look like Manny was taking the pictures himself. By January 2016, the “Selfie Cat” had escaped the camera roll and entered internet history.</p>
-            <a className="text-link" href="https://www.instagram.com/yoremahm/" target="_blank" rel="noreferrer">VISIT THE ORIGINAL @YOREMAHM ARCHIVE <span>↗</span></a>
+            <p className="lead">The meme begins with one irresistible visual trick: a cat who looks like he took his own photo.</p>
+            <p>An outstretched paw meets an ultra-wide action-camera lens. The face lands perfectly in frame, the perspective exaggerates the pose, and an accidental snapshot reads like total confidence. By January 2016, “Selfie Cat” had escaped the camera roll and entered internet history.</p>
+            <a className="text-link" href="https://www.instagram.com/yoremahm/" target="_blank" rel="noreferrer">VISIT THE SOURCE CAMERA ROLL <span>↗</span></a>
           </div>
         </div>
       </section>
@@ -326,7 +326,7 @@ export default function Home() {
               <div className="post-meta"><b>{post.label}</b><time>{post.date}</time></div>
               <iframe
                 src={`https://www.instagram.com/p/${post.id}/embed/captioned/`}
-                title={`Manny the Selfie Cat - ${post.label}`}
+                title={`Selfie Cat archive - ${post.label}`}
                 loading="lazy"
                 scrolling="no"
               />
@@ -338,12 +338,12 @@ export default function Home() {
         <div className="proof-label social-proof-label"><span>03</span><b>THE REPOST NEVER ENDED</b><i>REDDIT / X / THE OPEN WEB</i></div>
         <div className="repost-grid">
           <a className="repost-card reddit" href="https://www.reddit.com/r/Catmemes/comments/nfxta1/going_to_have_to_take_away_his_phone/" target="_blank" rel="noreferrer">
-            <span className="platform-mark">r/</span><small>r/CATMEMES / MAY 2021</small><h3>"Going to have to take away his phone"</h3><p>527+ votes - and commenters trace the photo back to Manny and @yoremahm.</p><b>OPEN THREAD</b>
+            <span className="platform-mark">r/</span><small>r/CATMEMES / MAY 2021</small><h3>"Going to have to take away his phone"</h3><p>527+ votes—and another generation discovers the original Selfie Cat frame.</p><b>OPEN THREAD</b>
           </a>
           <a className="repost-card reddit-dark" href="https://www.reddit.com/r/pics/comments/12ifr23/no_comment/" target="_blank" rel="noreferrer">
             <span className="platform-mark">r/</span><small>r/PICS / APR 2023</small><h3>"No comment." The legend resurfaces.</h3><p>Years after the first viral wave, the replies still know exactly who is in frame.</p><b>OPEN THREAD</b>
           </a>
-          <a className="repost-card x-card" href="https://x.com/search?q=%22Manny%20the%20Selfie%20Cat%22&src=typed_query" target="_blank" rel="noreferrer">
+          <a className="repost-card x-card" href="https://x.com/search?q=%22Selfie%20Cat%22%20meme&src=typed_query" target="_blank" rel="noreferrer">
             <span className="platform-mark">X</span><small>THE REPOST TRAIL / LIVE SEARCH</small><h3>One image. Endless new captions.</h3><p>Follow the references, reposts and reactions that kept Selfie Cat in circulation.</p><b>SEARCH X</b>
           </a>
         </div>
@@ -372,16 +372,16 @@ export default function Home() {
           )}
           <a className="secondary-action" href="https://www.instagram.com/yoremahm/" target="_blank" rel="noreferrer">HONOR THE ORIGINAL ↗</a>
         </div>
-        <p className="risk-note">Community tribute project. Not affiliated with Manny, @yoremahm, Instagram, GoPro, or pump.fun. Memecoins are highly volatile—never spend more than you can afford to lose.</p>
+        <p className="risk-note">Community tribute project. Not affiliated with the original creator, Instagram, GoPro, or pump.fun. Memecoins are highly volatile—never spend more than you can afford to lose.</p>
       </section>
 
       <section className="press section-pad" id="press" aria-labelledby="press-title">
         <div className="section-head press-head">
           <div>
-            <div className="section-kicker"><span>006</span> PRESS CONTACT SHEET</div>
+            <div className="section-kicker"><span>006</span> ARCHIVE CONTACT SHEET</div>
             <h2 id="press-title">THE DAY THE<br /><em>FLASH WENT GLOBAL.</em></h2>
           </div>
-          <p>Selected reporting that documented the phenomenon as it happened.</p>
+          <p>Selected uploads, coverage and reposts that document how the meme moved across the internet.</p>
         </div>
         <div className="press-list">
           {press.map(([name, date, href], index) => (

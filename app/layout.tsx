@@ -12,18 +12,18 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: baseUrl,
     title: "Selfie Cat — The Internet's Greatest Camera Roll",
-    description: "A living tribute to Manny, the legendary Selfie Cat—and the community keeping the camera roll alive.",
-    keywords: ["Selfie Cat", "Manny the cat", "Manny Selfie Cat", "internet meme", "Solana memecoin"],
+    description: "A living archive of the legendary Selfie Cat meme—and the community keeping the camera roll alive.",
+    keywords: ["Selfie Cat", "Selfie Cat meme", "cat selfie", "internet meme", "Solana memecoin"],
     openGraph: {
       title: "Selfie Cat — He Took the Selfie. We Kept the Receipts.",
-      description: "The story, the squad, and the viral camera roll that made internet history.",
+      description: "The photos, the format, and the viral camera roll that made internet history.",
       type: "website",
       images: [{ url: socialImage, width: 1792, height: 938, alt: "Selfie Cat commemorative archive" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Selfie Cat — The Internet's Greatest Camera Roll",
-      description: "A living tribute to the cat who put the whole pack in frame.",
+      description: "A living archive of the wide-angle cat selfie that became internet history.",
       images: [socialImage],
     },
     icons: { icon: "/selfie-cat-tribute.png", shortcut: "/selfie-cat-tribute.png" },
