@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? "";
+const CONTRACT_ADDRESS = "2xnuGwWq5yjBG66cnZLnxbJzvKawhmHNe9vpzSFkpump";
 const X_ACCOUNT_URL = "https://x.com/selfie_catsol_";
 
 type TimelineVisual = {
@@ -152,12 +152,6 @@ const press = [
 const videos = [
   { id: "c2kxS6amOLE", title: "Selfie Cat — The GoPro Era", author: "Archive upload" },
   { id: "_qSPt5pF-u8", title: "This Cat Takes Better Selfies Than You", author: "Epic Viral Vids" },
-];
-
-const instagramPosts = [
-  { id: "_Mad0ZJ53V", label: "THE SQUAD ARRIVES", date: "DEC 12, 2015" },
-  { id: "_J7iyip5yp", label: "DUCKFACE ERA", date: "DEC 11, 2015" },
-  { id: "BAK9WuEJ56G", label: "TONGUE-OUT TUESDAY", date: "JAN 5, 2016" },
 ];
 
 export default function Home() {
@@ -321,23 +315,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="proof-label social-proof-label"><span>02</span><b>THE ORIGINAL CAMERA ROLL</b><i>INSTAGRAM / @YOREMAHM</i></div>
-        <div className="instagram-grid">
-          {instagramPosts.map((post) => (
-            <article className="instagram-card" key={post.id}>
-              <div className="post-meta"><b>{post.label}</b><time>{post.date}</time></div>
-              <iframe
-                src={`https://www.instagram.com/p/${post.id}/embed/captioned/`}
-                title={`Selfie Cat archive - ${post.label}`}
-                loading="lazy"
-                scrolling="no"
-              />
-              <a href={`https://www.instagram.com/p/${post.id}/`} target="_blank" rel="noreferrer">OPEN ORIGINAL POST</a>
-            </article>
-          ))}
-        </div>
-
-        <div className="proof-label social-proof-label"><span>03</span><b>THE REPOST NEVER ENDED</b><i>REDDIT / X / THE OPEN WEB</i></div>
+        <div className="proof-label social-proof-label"><span>02</span><b>THE REPOST NEVER ENDED</b><i>REDDIT / X / THE OPEN WEB</i></div>
         <div className="repost-grid">
           <a className="repost-card reddit" href="https://www.reddit.com/r/Catmemes/comments/nfxta1/going_to_have_to_take_away_his_phone/" target="_blank" rel="noreferrer">
             <span className="platform-mark">r/</span><small>r/CATMEMES / MAY 2021</small><h3>"Going to have to take away his phone"</h3><p>527+ votes—and another generation discovers the original Selfie Cat frame.</p><b>OPEN THREAD</b>
