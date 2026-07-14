@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS ?? "";
+const X_ACCOUNT_URL = "https://x.com/selfie_catsol_";
 
 type TimelineVisual = {
   src: string;
@@ -192,6 +193,7 @@ export default function Home() {
           <a href="#moments">Best moments</a>
           <a href="#proof">Viral proof</a>
           <a href="#press">Press roll</a>
+          <a href={X_ACCOUNT_URL} target="_blank" rel="noreferrer">Official X ↗</a>
         </nav>
         <button className="mini-ca" type="button" onClick={copyContract} disabled={!hasContract}>
           <span className="status-dot" /> {hasContract ? shortAddress : "CA SOON"}
@@ -403,6 +405,7 @@ export default function Home() {
         </div>
         <div className="footer-links">
           <a href="#top">BACK TO TOP ↑</a>
+          <a href={X_ACCOUNT_URL} target="_blank" rel="noreferrer">OFFICIAL X ↗</a>
           <a href="https://www.instagram.com/yoremahm/" target="_blank" rel="noreferrer">ORIGINAL ARCHIVE ↗</a>
           <a href="#token">CONTRACT</a>
         </div>
